@@ -1,9 +1,8 @@
-from collections import deque
-from itertools import product
-
-def toggle(grid, x, y):
-    for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)):
-        nx, ny = x + dx, y + dy
-        if 0 <= nx < 5 and 0 <= ny < 5:
-            grid[nx][ny] ^= 1
-    return grid
+def solve(grid):
+    start = [row[:] for row in grid]
+    queue = deque([(start, [])])
+    visited = {str(start)}
+    while queue:
+        grid, presses = queue.popleft()
+        if sum(sum(row) for row in grid) == 0:
+            return presses
