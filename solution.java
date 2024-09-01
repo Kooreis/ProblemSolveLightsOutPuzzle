@@ -1,12 +1,7 @@
-import java.util.*;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[][] grid = new int[5][6];
-        for (int i = 0; i < 5; i++) {
-            char[] line = scanner.nextLine().toCharArray();
+for (int i = 0; i < 32; i++) {
+            int[][] temp = new int[5][6];
             for (int j = 0; j < 5; j++) {
-                grid[i][j] = line[j] - '0';
+                for (int k = 0; k < 5; k++) {
+                    temp[j][k] = grid[j][k];
+                }
             }
-        }
